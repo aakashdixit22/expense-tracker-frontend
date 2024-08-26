@@ -15,7 +15,7 @@ const Login = () => {
   const submitHandler = async (values) => {
     try {
       setLoading(true);
-      const { data } = await axios.post("/users/login", values);
+      const { data } = await axios.post("https://expense-tracker-backend-u48t.onrender.com/users/login", values);
       setLoading(false);
       message.success("Login successful");
       localStorage.setItem(

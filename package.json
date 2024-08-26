@@ -1,5 +1,5 @@
 {
-  "proxy": "https://expense-tracker-backend-u48t.onrender.com/api/v1",
+  "proxy": "https://expense-tracker-backend-u48t.onrender.com/",
   "name": "client",
   "version": "0.1.0",
   "private": true,

@@ -65,7 +65,7 @@ const HomePage = () => {
     try {
       setLoading(true);
       const user = JSON.parse(localStorage.getItem('user')); // Get user from localStorage
-      const res = await axios.post('/transections/get-transection', { userid: user._id,frequency,selectedDate,type});
+      const res = await axios.post('https://expense-tracker-backend-u48t.onrender.comhttps://expense-tracker-backend-u48t.onrender.com/transections/get-transection', { userid: user._id,frequency,selectedDate,type});
       setAllTransections(res.data);
       setLoading(false);
       console.log(res.data);
@@ -81,7 +81,7 @@ const HomePage = () => {
       try {
         setLoading(true);
         const user = JSON.parse(localStorage.getItem('user')); // Get user from localStorage
-        const res = await axios.post('/transections/get-transection', { userid: user._id, frequency ,selectedDate,type});
+        const res = await axios.post('https://expense-tracker-backend-u48t.onrender.com/transections/get-transection', { userid: user._id, frequency ,selectedDate,type});
         setAllTransections(res.data);
         setLoading(false);
         console.log(res.data);
@@ -97,7 +97,7 @@ const HomePage = () => {
 const handleDelete = async (record) => {
   try {
     setLoading(true);
-    await axios.post('/transections/delete-transection', { transactionId: record._id });
+    await axios.post('https://expense-tracker-backend-u48t.onrender.com/transections/delete-transection', { transactionId: record._id });
     setLoading(false);
     message.success("Transaction Deleted successfully");
     getAllTransections(); // Refresh transactions after adding a new one
@@ -113,13 +113,13 @@ const handleDelete = async (record) => {
       const user = JSON.parse(localStorage.getItem('user')); // Get user from localStorage
       setLoading(true);
       if (editable) {
-        await axios.post('/transections/edit-transection', { payload:{...values,userId:user._id},transactionId:editable._id });
+        await axios.post('https://expense-tracker-backend-u48t.onrender.com/transections/edit-transection', { payload:{...values,userId:user._id},transactionId:editable._id });
       setLoading(false);
       message.success("Transaction Updated successfully");
 
       }
       else{
-        await axios.post('/transections/add-transection', { ...values, userid: user._id });
+        await axios.post('https://expense-tracker-backend-u48t.onrender.com/transections/add-transection', { ...values, userid: user._id });
       setLoading(false);
       message.success("Transaction Added successfully");
       }

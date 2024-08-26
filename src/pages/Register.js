@@ -15,7 +15,7 @@ const Register = () => {
   const submitHandler = async (values) => {
     try {
       setLoading(true);
-      await axios.post('/users/register', values); // Posting the values to this URL
+      await axios.post('https://expense-tracker-backend-u48t.onrender.com/users/register', values); // Posting the values to this URL
       message.success("Registration successful");
       setLoading(false);
       navigate("/login");
